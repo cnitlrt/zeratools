@@ -27,7 +27,6 @@ Zeratool has been tested on Ubuntu 16.04 through 20.04. Please install [radare2]
 Zeratool is a python script which accept a binary as an argument and optionally a linked libc library, and a CTF Server connection information
 
 ```
-[chris:~/Zeratool] zerapwn.py -h
 usage: zerapwn.py [-h] [-l LIBC] [-u URL] [-p PORT] [-v] [--force_shellcode] [--force_dlresolve] [--skip_check] [--no_win] [--format_only] [--overflow_only] file
 
 positional arguments:
