@@ -1,3 +1,6 @@
+# ChangeLog
+- Fix the problem that the shell cannot be obtained by calling system under the high version glibc
+- Reduce the generated payload
 # Zeratool v2.2
 Automatic Exploit Generation (AEG) and remote flag capture for exploitable CTF problems
 
@@ -27,7 +30,7 @@ Zeratool has been tested on Ubuntu 16.04 through 20.04. Please install [radare2]
 Zeratool is a python script which accept a binary as an argument and optionally a linked libc library, and a CTF Server connection information
 
 ```
-usage: zerapwn.py [-h] [-l LIBC] [-u URL] [-p PORT] [-v] [--force_shellcode] [--force_dlresolve] [--skip_check] [--no_win] [--format_only] [--overflow_only] file
+usage: zerapwn.py [-h] [-l LIBC] [-u URL] [-p PORT] [-c CMD] [-v] [--force_shellcode] [--force_dlresolve] [--skip_check] [--no_win] [--format_only] [--overflow_only] file
 
 positional arguments:
   file                  File to analyze
@@ -37,6 +40,7 @@ optional arguments:
   -l LIBC, --libc LIBC  libc to use
   -u URL, --url URL     Remote URL to pwn
   -p PORT, --port PORT  Remote port to pwn
+  -c CMD, --cmd CMD     cmd shell
   -v, --verbose         Verbose mode
   --force_shellcode     Set overflow pwn mode to point to shellcode
   --force_dlresolve     Set overflow pwn mode to use ret2dlresolve
@@ -44,6 +48,7 @@ optional arguments:
   --no_win              Skip win function checking
   --format_only         Only run format strings check
   --overflow_only       Only run overflow check
+
 
 ```
 
