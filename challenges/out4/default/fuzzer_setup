@@ -1,0 +1,3 @@
+# environment variables:
+# command line:
+'afl-fuzz' '-Q' '-i' 'in' '-o' 'out4' '-m' 'none' '--' './medium_format'

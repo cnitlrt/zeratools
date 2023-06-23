@@ -1,0 +1,4 @@
+program=/home/ubuntu/Zeratool/medium_format
+stdin=command.input
+clearenv=true
+envfile=temp.env
