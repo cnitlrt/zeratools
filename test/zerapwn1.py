@@ -218,35 +218,20 @@ def main():
             properties["pwn_type"]["results"]["leak_input"] = optimize_data(properties["pwn_type"]["results"]["leak_input"],properties["protections"]["arch"])
 
         if properties["pwn_type"]["results"]["type"]:
-
-            # If we're leaking the remote libc we can't test locally
-            if isinstance(properties["libc"], dict):
-                # properties["send_results"] = overflowExploitSender.sendExploit(
-                #     args.file, properties, debug=True
-                # )
+            if args.url != "":
+                # print("REMOTE")
+                # input()
                 properties["remote_results"] = overflowExploitSender.sendExploit(
-                    args.file,
-                    properties,
-                    remote_server=True,
-                    remote_url=properties["remote"]["url"],
-                    port_num=properties["remote"]["port"],
-                )
-            else:
-                properties["send_results"] = overflowExploitSender.sendExploit(
-                    args.file, properties
-                )
-                if (
-                    properties["send_results"] is not None
-                    and properties["send_results"].get("flag_found", False)
-                    and args.url != ""
-                ):
-                    properties["remote_results"] = overflowExploitSender.sendExploit(
                         args.file,
                         properties,
                         remote_server=True,
                         remote_url=properties["remote"]["url"],
                         port_num=properties["remote"]["port"],
-                    )
+                )
+            else:
+                properties["send_results"] = overflowExploitSender.sendExploit(
+                    args.file, properties
+                )
 
     elif properties["pwn_type"]["type"] == "overflow_variable":
         properties["pwn_type"]["results"] = properties["pwn_type"]

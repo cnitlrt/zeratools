@@ -1,6 +1,7 @@
 # ChangeLog
 - Fix the problem that the shell cannot be obtained by calling system under the high version glibc
 - Reduce the generated payload
+- 修复本地通远程不通的情况
 # Zeratool v2.2
 Automatic Exploit Generation (AEG) and remote flag capture for exploitable CTF problems
 
