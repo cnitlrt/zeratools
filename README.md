@@ -1,3 +1,11 @@
+# 用法
+```
+/home/ubuntu/zeratools/test/zerapwn1.py pwn -l libc文件 -c 要执行的命令 -u 远程地址 -p 远程端口
+```
+例如
+```
+/home/ubuntu/zeratools/test/zerapwn1.py pwn -l libc.so.6 -c "echo helloworld" -u 127.0.0.1 -p 1234
+```
 # ChangeLog
 - Fix the problem that the shell cannot be obtained by calling system under the high version glibc
 - Reduce the generated payload
